@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d1b"><title>My Card — Online Duel</title>
+<style>
+:root{font-family:system-ui,-apple-system,'Noto Sans Thai',sans-serif;background:#080d1b;color:#f5f0ff;color-scheme:dark}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 18% 8%,#24345a66,transparent 40%),radial-gradient(circle at 90% 30%,#6b204044,transparent 48%),#080d1b;min-height:100vh}button,input,select{font:inherit}button{cursor:pointer;min-height:42px}button:disabled{opacity:.42;cursor:not-allowed}.wrap{max-width:1080px;margin:auto;padding:14px 12px 42px}.top{display:flex;align-items:center;gap:10px;justify-content:space-between;flex-wrap:wrap;margin-bottom:18px}.brand{font:900 clamp(21px,4.5vw,33px)/1.1 Georgia,serif;color:#fff5d6;letter-spacing:1px}.sub{font-size:11px;letter-spacing:2px;color:#e9c580;margin-top:4px}.badge{font-size:12px;padding:8px 12px;border:1px solid #626d9a;border-radius:99px;color:#aeb9db}.badge.live{border-color:#45b692;color:#9eefd2}.panel{background:#141b2edd;border:1px solid #394368;border-radius:16px;padding:18px;margin:10px 0}.panel h2{font-size:20px;margin:0 0 6px}.muted{color:#a9b5d2;font-size:13px;line-height:1.6}.setup{max-width:670px;margin:24px auto}.setup .hero{text-align:center;padding:18px 8px 28px}.hero .emoji{font-size:58px}.hero h1{font:900 clamp(24px,7vw,42px) Georgia,serif;color:#f7e4af;margin:12px 0}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px}.fieldlabel{font-size:13px;color:#a9b5d2;margin:14px 0 7px;display:block}.entry{width:100%;background:#080f22;border:1px solid #586387;padding:12px;color:#fff;border-radius:9px;min-height:44px;font-size:16px}.primary{background:linear-gradient(120deg,#b99240,#f4d787);color:#261b12;border:0;border-radius:10px;padding:10px 15px;font-weight:800}.secondary{background:#273658;border:1px solid #526386;border-radius:10px;color:#f9f0ff;padding:10px 12px}.pink{background:#7c355c;border:1px solid #d477a7;color:white;border-radius:10px;padding:10px 14px}.buttons{display:flex;gap:8px;flex-wrap:wrap;align-items:center}.lobby-link{overflow-wrap:anywhere;border:1px dashed #5d6991;color:#f6d994;background:#080f22;padding:12px;border-radius:9px;font-size:13px;margin:14px 0}.msg{min-height:20px;margin-top:8px;color:#ebbe69;font-size:13px}.notice{border-left:3px solid #d1ac5f;background:#141b2e;padding:10px 12px;border-radius:5px;font-size:12px;color:#c7d1ea;line-height:1.6;margin-top:18px}.arena{display:none}.battlehead{display:grid;grid-template-columns:1fr auto 1fr;gap:8px;align-items:stretch;margin-bottom:12px}.playerbox{padding:10px 12px;border:1px solid #445172;background:#121b30;border-radius:13px;min-width:0}.playerbox.you{border-color:#b9a36e}.pn{font-size:13px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.lp{font-size:24px;color:#f3d996;font-weight:900}.lp.opp{color:#f29abf}.mini{font-size:11px;color:#b4bfe0}.versus{align-self:center;text-align:center;font:700 12px Georgia;color:#f1bf71}.vsmall{color:#aaa;font-size:11px;font-family:system-ui}.turnbar{display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;background:#11182a;padding:11px 13px;border-radius:12px;border:1px solid #415078;margin:10px 0}.phase{font-weight:800;color:#e6c988}.zone-head{display:flex;gap:6px;align-items:center;justify-content:space-between;margin:10px 0 6px;font-size:13px;color:#abbde4}.field{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;min-height:148px}.slot{border:1px dashed #3c4a6d;border-radius:11px;min-height:140px;display:flex;align-items:center;justify-content:center;color:#59698c;font-size:12px;background:#0b1222aa}.tcg{position:relative;display:flex;flex-direction:column;min-width:0;min-height:140px;width:100%;padding:6px;border-radius:10px;text-align:left;color:white;border:2px solid #8a93b7;background:linear-gradient(150deg,#354d86,#101d3b 65%,#0a1023);overflow:hidden;box-shadow:inset 0 0 0 1px #f6d98530}.tcg.cupid{background:linear-gradient(150deg,#ad538f,#402341 65%,#191028);border-color:#e0a7d0}.tcg.spell{background:linear-gradient(150deg,#225c67,#102d36)}.tcg.trap{background:linear-gradient(150deg,#6d3353,#27162d)}.tcg.active{outline:3px solid #ffd86f;outline-offset:-2px}.tcg:focus-visible{outline:3px solid #ffe08b}.tcg .art{font-size:clamp(24px,6.2vw,48px);text-align:center;line-height:1.15;flex:1;display:flex;align-items:center;justify-content:center;min-height:46px;text-shadow:0 4px 12px #0008}.tcg .cname{font-size:clamp(9px,2.4vw,13px);font-weight:800;line-height:1.25;min-height:28px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.tcg .star{font-size:11px;color:#ffda82;margin-bottom:2px}.tcg .stats{font-size:clamp(9px,2.2vw,12px);font-weight:800;color:#f8e7b5;display:flex;gap:3px;flex-wrap:wrap}.tcg .status{font-size:9px;color:#d6dff8}.tcg.defense{border-style:dashed}.hand{display:flex;gap:7px;overflow-x:auto;padding:4px 2px 12px;scroll-snap-type:x proximity}.hand .tcg{flex:0 0 116px;max-width:116px;min-height:161px;scroll-snap-align:start}.field .tcg{min-height:140px}.traprow{display:flex;gap:6px}.backcard{border:1px solid #705d93;border-radius:7px;background:repeating-linear-gradient(45deg,#542b5e,#542b5e 7px,#291c45 7px,#291c45 14px);width:34px;height:43px}.actpanel{border:1px solid #85734e;background:#221d28;padding:12px;border-radius:12px;margin:12px 0}.actpanel strong{color:#f0d898}.actpanel .effect{font-size:12px;color:#d0d3e5;line-height:1.55;padding:7px 0}.actpanel select{width:100%;font-size:15px;background:#12192d;color:white;padding:10px;border:1px solid #586382;border-radius:8px;min-height:44px;margin:7px 0}.hidden{display:none!important}.loglist{font-size:12px;color:#cad3ea;line-height:1.6;max-height:172px;overflow:auto;margin:7px 0 0;padding-left:20px}.winner{font-size:18px;font-weight:900;color:#f9db85;text-align:center;padding:15px;border:1px solid #e2b55b;border-radius:12px;background:#5f4e263b}.footer{font-size:12px;color:#7f8ead;text-align:center;margin-top:24px}.small{font-size:12px}#lobbyStatus{white-space:pre-wrap}@media(min-width:700px){.setup{margin-top:60px}.field{min-height:190px}.slot{min-height:185px}.field .tcg{max-width:188px;justify-self:center;min-height:185px}.field .tcg .art{font-size:58px}.tcg .cname{font-size:14px}.tcg .stats{font-size:13px}.field .slot{width:100%;max-width:188px;justify-self:center}.hand .tcg{flex-basis:140px;max-width:140px;min-height:184px}.hand .tcg .art{font-size:43px}.arena{max-width:840px;margin:auto}}
+.tcg .art{padding:2px 0 4px;overflow:hidden;min-height:72px}.tcg .art img{display:block;width:100%;height:100%;min-height:72px;max-height:125px;object-fit:cover;object-position:center;border:1px solid #d8b66b;border-radius:5px}.hand .tcg .art img{max-height:120px}.field .tcg .art img{max-height:155px}@media(min-width:700px){.field .tcg .art img{max-height:165px}}.result-overlay{position:fixed;inset:0;background:#050816e8;display:flex;align-items:center;justify-content:center;z-index:999;padding:20px}.result-box{text-align:center;width:min(100%,420px);padding:36px 20px;border:2px solid #dbb96b;border-radius:22px;background:radial-gradient(circle at 50% 0,#273a6b,#111729 70%);box-shadow:0 0 50px #d7aa4e33}.result-title{font:900 clamp(60px,15vw,105px)/1 Georgia,serif;letter-spacing:5px;color:#ffe6a1;text-shadow:0 0 25px #e7b858aa}.result-title.loss{color:#ff8b9d;text-shadow:0 0 25px #e74c67aa}.result-box p{color:#cbd5ee}.result-box button{margin:6px}.reconnect-notice{position:sticky;top:8px;z-index:10;background:#402b25;border:1px solid #f0ba69;border-radius:12px;padding:14px;margin:10px 0;text-align:center}.reconnect-notice div{margin:8px;font-size:13px}.badge.waiting{color:#f3c97b;border-color:#ad7d2c}.badge.offline{color:#ff9b9b;border-color:#a84040}
+/* MY CARD — Enchanted Arena */
+.arena{background:radial-gradient(ellipse at 50% 35%,#1a3b4c80,transparent 68%),linear-gradient(145deg,#101b30,#080c1b);border:2px solid #8c713e;border-radius:22px;padding:clamp(10px,3vw,22px);box-shadow:inset 0 0 40px #dfb75b15,0 10px 40px #0008}
+.field{padding:13px 8px;background:repeating-linear-gradient(45deg,#132b32a6 0px,#132b32a6 15px,#193340a6 16px,#193340a6 17px);border:1px solid #b99b5a77;border-radius:16px;box-shadow:inset 0 0 24px #0009}
+.slot{background:radial-gradient(circle,#b69b4730,transparent 70%);border:2px dashed #b99b5a66}
+.tcg{transition:transform .25s ease,filter .25s ease;transform-origin:center;box-shadow:0 5px 12px #0009, inset 0 0 0 1px #ffe6a044}
+.tcg:active{transform:translateY(-7px) scale(1.04)}
+.turnbar{border:1px solid #c5a25f;background:linear-gradient(100deg,#14243c,#2a253b,#14243c)}
+.deck-area{display:flex;align-items:center;gap:14px;margin:14px 0;flex-wrap:wrap}
+.draw-pile{position:relative;width:116px;min-height:150px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;color:#fce3a0;border:3px double #f6d58b;border-radius:13px;background:repeating-linear-gradient(45deg,#152d56,#152d56 9px,#1c3967 9px,#1c3967 18px);box-shadow:5px -5px 0 #314669,9px -9px 0 #192e51,0 10px 22px #0009;text-align:center;font-size:12px}
+.draw-pile:disabled{opacity:.62}.draw-pile.ready{animation:pileGlow 1.4s ease-in-out infinite alternate;cursor:pointer}
+.pile-symbol{font-size:36px;color:#f4d179}.deck-tip{flex:1;min-width:170px;color:#d6c8a4;font-size:13px;line-height:1.6}
+@keyframes pileGlow{to{box-shadow:5px -5px 0 #314669,9px -9px 0 #192e51,0 0 27px #f5c65c}}
+.attack-fx{position:absolute;pointer-events:none;opacity:0;z-index:30;font-size:68px;text-shadow:0 0 35px #ffca5b;left:50%;transform:translateX(-50%)}
+.arena{position:relative}.attack-fx.play{animation:slashFX .85s ease-out forwards}
+@keyframes slashFX{0%{opacity:0;top:70%;transform:translateX(-80%) rotate(-45deg) scale(.5)}35%{opacity:1;top:45%;transform:translateX(-20%) rotate(15deg) scale(1.3)}75%{opacity:1;top:25%;transform:translateX(-50%) rotate(-15deg)}100%{opacity:0;top:18%;transform:translateX(-50%) scale(1.6)}}
+.tcg.striking{animation:cardStrike .7s ease-in-out;z-index:8}
+@keyframes cardStrike{0%,100%{transform:translateY(0) scale(1)}45%{transform:translateY(-38px) scale(1.13);filter:brightness(1.7)}}
+@media(prefers-reduced-motion:reduce){.draw-pile.ready,.attack-fx.play,.tcg.striking{animation:none}}
+
+/* Fantasy Arena visual update — gameplay elements remain interactive HTML */
+body{background:radial-gradient(ellipse at top,#182d52,#080913 70%)}
+.wrap{max-width:1200px}
+.arena{max-width:1080px!important;isolation:isolate;overflow:hidden;background:linear-gradient(180deg,#071a33ee 0%,#0c1c35ee 41%,#3c1019ef 60%,#190b14f7 100%);border:3px solid #cfa85c;border-radius:23px;box-shadow:0 0 0 3px #13172c,0 20px 70px #000b,inset 0 0 38px #e0ae5d24}
+.arena:before{content:'';position:absolute;inset:0;z-index:-1;background-image:linear-gradient(180deg,#0b1931a8,#06152fbd 44%,#3a0e19b0 56%,#1b0b17dc),url('./fantasy_arena.png');background-size:cover;background-position:center center;opacity:.84;filter:saturate(1.2)}
+.battlehead{border:1px solid #d4b16b;border-radius:14px;padding:7px;background:#090e20d9}
+.playerbox{background:linear-gradient(120deg,#111e38ef,#172a48e8);border:1px solid #a3c5ee;border-radius:10px}
+.playerbox.you{background:linear-gradient(120deg,#34151fed,#25141fea);border-color:#e8a36d}
+.lp{font-size:clamp(24px,5vw,35px);text-shadow:0 2px 8px #000}
+.turnbar{background:linear-gradient(90deg,#102746ee,#191329ee,#4c1723e8);border:1px solid #e4c17d;box-shadow:0 3px 18px #0009}
+.zone-head{padding:8px 12px;margin:12px 0 6px;border:1px solid #e4bb6d7d;border-radius:8px;background:#070c1cdb;color:#f8e0ad;font-weight:800}
+.field{border:2px solid #d9b56c;border-radius:12px;padding:12px 8px;min-height:170px;box-shadow:inset 0 0 35px #0008,0 4px 20px #0007;background:radial-gradient(circle at 50% 35%,#a9d7f41d,transparent 60%),linear-gradient(90deg,#0b2842bc,#17283c99,#0b2842bc)}
+#myField{background:radial-gradient(circle at 50% 40%,#ffb85e18,transparent 65%),linear-gradient(90deg,#2c101bda,#3a1722a8,#2c101bda)}
+.slot{border:2px solid #c8b075aa;min-height:148px;background:linear-gradient(145deg,#ffffff0c,#02091a62);box-shadow:inset 0 0 0 3px #e8cb7c1c,inset 0 0 24px #f2c67115;border-radius:8px}
+#myField .slot{border-color:#e6a365b8}
+.tcg{border:2px solid #f0d18c;border-radius:8px;box-shadow:0 4px 16px #000b,0 0 0 1px #111}
+.tcg .art img{object-fit:contain!important;background:#0c1122;max-height:170px}
+.hand{padding:12px 8px 20px;background:#0c1024ba;border:1px solid #b89962;border-radius:12px}
+.hand .tcg{flex-basis:125px;max-width:125px}
+.deck-area{background:#090f20dc;border:1px solid #ba9c60;border-radius:13px;padding:12px}
+.draw-pile{background:repeating-linear-gradient(45deg,#183761,#183761 9px,#0a1736 9px,#0a1736 18px);border-color:#e9c783}
+.actpanel{background:#17121de9;border:1px solid #e6c278}
+@media(min-width:700px){.field{min-height:235px}.slot{min-height:205px}.field .tcg{min-height:205px;max-width:210px}.field .tcg .art img{max-height:185px}.arena{padding:22px}}
+@media(max-width:420px){.arena{padding:8px}.field{gap:5px;padding:7px 5px}.slot,.field .tcg{min-height:140px}.tcg .art img{max-height:102px}.zone-head{font-size:12px}}
+/* King of Cards landing illustration and creator credit */
+.setup .hero{padding:0 0 18px}
+.king-poster{display:block;width:100%;max-width:460px;height:auto;max-height:570px;object-fit:contain;margin:0 auto 14px;border-radius:15px;border:1px solid #b99b63;box-shadow:0 8px 28px #0008}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.pond-credit{display:inline-block;margin-top:7px;font-size:11px;color:#e2c786;letter-spacing:.4px}
+@media(max-width:520px){.king-poster{max-height:420px;max-width:310px}}
+
+/* V2.0: 6 monster slots in a compact 3x2 grid */
+.field{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.field .tcg,.field .slot{min-height:135px}
+.grave-button{border:1px solid #a48c62;background:#251e2c;color:#f0d7a0;border-radius:8px;padding:5px 10px;min-height:32px;font-size:12px}
+.grave-modal{position:fixed;inset:0;z-index:1200;background:#030714e8;display:flex;align-items:center;justify-content:center;padding:14px}
+.grave-content{background:#151d35;border:1px solid #c7a86b;border-radius:16px;padding:16px;width:min(680px,100%);max-height:85vh;overflow:auto}
+.grave-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;color:#f2d79b}
+.grave-cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:10px}
+.grave-item{background:#202b46;border:1px solid #536a94;border-radius:10px;padding:8px;font-size:12px;overflow-wrap:anywhere}
+.grave-item img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}
+@media(max-width:420px){.field{gap:4px}.field .tcg,.field .slot{min-height:128px}}
+
+/* V2.1 cinematic effects */
+.v21-sound{position:fixed;right:12px;bottom:14px;z-index:110;background:#1b2545;border:1px solid #d9b56b;color:#ffe6ac;border-radius:30px;padding:9px 13px;font-weight:700;box-shadow:0 5px 20px #0009}
+.v21-boss{position:fixed;inset:0;z-index:95;display:flex;align-items:center;justify-content:center;pointer-events:none;background:radial-gradient(circle,#f6c65b44,#03051bcc 70%);animation:bossFade 2.8s ease both}
+.v21-boss-card{width:min(76vw,330px);text-align:center;padding:20px;background:linear-gradient(155deg,#3c235a,#131a38 65%,#432b1a);border:3px solid #f9d77d;border-radius:19px;box-shadow:0 0 35px #ffe17d,0 0 90px #a75af7;animation:bossRise 2.8s ease both}
+.v21-boss-card img{display:block;width:100%;height:min(44vh,350px);object-fit:contain;border-radius:9px}.v21-boss-card h2{color:#ffeb9d;font-size:20px;margin:9px 0 0}.v21-boss-card p{color:#d8bafa;margin:4px 0}
+@keyframes bossFade{0%{opacity:0}15%,75%{opacity:1}100%{opacity:0}}@keyframes bossRise{0%{transform:scale(.35) rotate(-9deg);filter:brightness(3)}22%{transform:scale(1.08) rotate(1deg);filter:brightness(1)}32%,75%{transform:scale(1)}100%{transform:scale(1.14);opacity:0}}
+.tcg.striking{z-index:5;animation:v21Strike .72s cubic-bezier(.2,.7,.3,1)}@keyframes v21Strike{0%{transform:translateY(0) scale(1)}35%{transform:translateY(-32px) scale(1.14);filter:drop-shadow(0 0 18px #ffd05c)}65%{transform:translateY(-12px) scale(1.06)}100%{transform:translateY(0) scale(1)}}
+.tcg{transition:box-shadow .2s,filter .2s}.tcg.active{box-shadow:0 0 18px #f3d57c99,inset 0 0 14px #ffe39a44}.field .tcg{animation:v21Enter .3s ease-out}@keyframes v21Enter{from{opacity:.5;transform:translateY(9px) scale(.94)}to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.v21-boss,.v21-boss-card,.tcg.striking,.field .tcg{animation:none!important}}
+
+#fxToastRoot{position:fixed;top:12%;left:50%;transform:translateX(-50%);z-index:120;display:flex;flex-direction:column;align-items:center;gap:8px;width:min(90vw,440px);pointer-events:none}
+.fx-toast{background:linear-gradient(110deg,#111a39ed,#30234aef);border:1px solid #e5c27a;color:#fff4d7;padding:12px 16px;border-radius:14px;box-shadow:0 0 22px #e6b65377,0 8px 26px #000b;font-weight:750;font-size:14px;text-align:center;animation:fxToastIn 2.6s ease both}
+.fx-draw{border-color:#7bdaf8;box-shadow:0 0 22px #64b7ff77}.fx-battle{border-color:#ff7d79;box-shadow:0 0 22px #e5535377}.fx-effect{border-color:#b5fa9a}
+.fx-flash{position:fixed;inset:0;z-index:90;pointer-events:none;animation:fxFlash .65s ease-out both}.fx-flash-summon{background:radial-gradient(circle,#ffd76b65,transparent 58%)}.fx-flash-draw{background:radial-gradient(circle at 50% 80%,#65d8ff40,transparent 58%)}.fx-flash-battle{background:radial-gradient(circle,#ff565a44,transparent 65%)}
+@keyframes fxToastIn{0%{opacity:0;transform:translateY(-20px) scale(.9)}12%,78%{opacity:1;transform:translateY(0) scale(1)}100%{opacity:0;transform:translateY(-16px)}}@keyframes fxFlash{0%{opacity:0}25%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.fx-toast,.fx-flash{animation:none}.fx-flash{display:none}}
+.turn-clock{font-weight:800;font-size:1.05rem;color:#9de8ff;margin-top:5px}.turn-clock.clock-warning{color:#ff7777;animation:clockpulse .8s infinite alternate}@keyframes clockpulse{to{opacity:.5}}
+</style>
+</head>
+<body><main class="wrap"><section id="accountPanel" style="margin:14px 0;padding:16px;border:1px solid #6b5e96;border-radius:15px;background:#191a30;color:#fff"><h2 style="margin:0 0 10px;font-size:1.2rem">👤 โปรไฟล์ MY CARD (บันทึกออนไลน์)</h2><div id="profileLoggedOut"><p>สมัครสมาชิกหรือเข้าสู่ระบบเพื่อเก็บชื่อและรูปโปรไฟล์ข้ามอุปกรณ์</p><input id="profileLoginEmail" class="entry" type="email" autocomplete="email" placeholder="อีเมล" style="margin:4px 0"><input id="profileLoginPassword" class="entry" type="password" autocomplete="current-password" placeholder="รหัสผ่านอย่างน้อย 6 ตัว" style="margin:4px 0"><div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button id="profileSignin" type="button">เข้าสู่ระบบ</button><button id="profileSignup" type="button" class="secondary">สมัครสมาชิก</button></div></div><div id="profileLoggedIn" hidden><div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap"><img id="profileAvatar" src="./king_of_cards_poster.png" alt="รูปโปรไฟล์" style="width:76px;height:76px;border-radius:50%;object-fit:cover"><div><small id="profileEmail"></small><br><label>เปลี่ยนรูป (JPG/PNG/WEBP ไม่เกิน 2 MB)<br><input id="profileFile" type="file" accept="image/jpeg,image/png,image/webp" style="max-width:230px"></label></div></div><input id="profileUsername" class="entry" maxlength="24" placeholder="ชื่อผู้เล่น" style="margin:10px 0"><div style="display:flex;gap:8px;flex-wrap:wrap"><button id="profileSave" type="button">💾 บันทึกโปรไฟล์</button><button id="profileSignout" type="button" class="secondary">ออกจากระบบ</button></div></div><p id="profileStatus" role="status" style="font-size:.9rem;color:#d5d1ff;margin-bottom:0">กำลังตรวจสอบบัญชี...</p></section>
+<header class="top"><div><div class="brand">🃏 My Card</div><div class="sub">SEVEN DECKS · ONLINE DUEL</div></div><span class="badge" id="connectionBadge">⚪ ยังไม่เชื่อมต่อ</span></header>
+<section id="setup" class="setup">
+ <div class="hero"><img class="king-poster" src="./king_of_cards_poster.png" alt="ศึกชิงราชาการ์ด มังกรปะทะคิวปิด ภาพอนิเมะแฟนตาซี"><h1 class="sr-only">ศึกชิงราชาการ์ด</h1><div class="muted">การ์ด 52 ใบต่อเด็ค • ผลัดกันเล่น • 2 คนจริงผ่านอินเทอร์เน็ต</div></div>
+ <div class="panel">
+  <h2>ตั้งค่าผู้เล่น</h2>
+  <label class="fieldlabel" for="name">ชื่อผู้เล่น</label><input id="name" class="entry" maxlength="24" value="ผู้ท้าดวล">
+  <label class="fieldlabel" for="deck">เลือกเด็คของคุณ</label>
+  <select id="deck" class="entry"><option value="dragon_magic_royal">🐉 มังกรเมจิกรอยัล — บุกหนัก</option><option value="cupid">💘 คิวปิด — ฟื้นฟู / คุมเกม</option><option value="dream_bunny">🐰 ดรีมบันนี่ พาราไดซ์</option><option value="floral_empress">🌸 จักรพรรดินีบุปผา</option><option value="five_relics">🏺 ตำนานห้าศาสตรา</option><option value="vampire_dynasty">🩸 ราชวงศ์แวมไพร์</option><option value="astral_guardians">🌌 ผู้พิทักษ์ดวงดาว</option><option value="necromancer">💀 เนโครแมนเซอร์</option><option value="eternal_lovers">💘 คู่รักนิรันดร์</option><option value="royal_kingdom">👑 ราชวงศ์และประชากร</option><option value="phoenix_empire">🔥 จักรวรรดิฟีนิกซ์</option><option value="ocean_abyss">🌊 จ้าวสมุทรลึก</option><option value="thunder_legion">⚡ กองทัพอัสนี</option><option value="forest_spirits">🌿 วิญญาณพงไพร</option><option value="shadow_assassins">🌑 นักฆ่าเงาจันทร์</option><option value="celestial_samurai">⚔️ ซามูไรสวรรค์</option><option value="clockwork_city">⚙️ นครจักรกล</option><option value="frost_queendom">❄️ ราชินีเหมันต์</option><option value="desert_dynasty">🏜️ ราชวงศ์ทะเลทราย</option><option value="dream_illusion">🪄 มายาแห่งความฝัน</option></select><div style="margin:10px 0"><button id="deckBuilderOpen" class="secondary" type="button">🃏 จัดเด็ค 52 ใบ</button> <span class="muted">เลือกการ์ดได้สูงสุดชนิดละ 4 ใบ</span></div>
+  <div class="grid2" style="margin-top:18px"><button id="create" class="primary">✨ สร้างห้อง</button><button id="joinTab" class="secondary">🔗 เข้าห้องเพื่อน</button></div>
+  <div id="joinBox" class="hidden"><label for="roomInput" class="fieldlabel">รหัสห้อง (เช่น ABC12345)</label><input id="roomInput" class="entry" maxlength="12" placeholder="กรอกรหัสห้อง"><button id="join" class="pink" style="margin-top:10px;width:100%">เข้าห้องและเริ่มดวล</button></div>
+  <div id="invite" class="hidden"><div class="fieldlabel">ห้องของคุณ: <strong id="roomCode"></strong></div><div id="inviteLink" class="lobby-link"></div><div class="buttons"><button id="copy" class="secondary">📋 คัดลอกลิงก์ชวนเพื่อน</button></div><div class="muted" style="margin-top:12px">เปิดหน้านี้ค้างไว้ แล้วส่งลิงก์ให้เพื่อนอีกคนเปิดจากมือถือของเขา</div></div>
+  <div id="lobbyStatus" class="msg" aria-live="polite"></div>
+ </div>
+ <div class="notice">🧪 เวอร์ชันทดลองออนไลน์ 1 ต่อ 1 ใช้ WebRTC ผ่านเซิร์ฟเวอร์สาธารณะสำหรับเชื่อมต่อ ต้องออนไลน์ทั้งคู่ตลอดเกม บันทึกเกมชั่วคราวไว้ในเบราว์เซอร์ของเครื่องเดิม และบางเครือข่ายอาจเชื่อมต่อไม่สำเร็จ และการกลับเข้าเกมต้องใช้เบราว์เซอร์เดิม</div>
+</section>
+<section id="arena" class="arena">
+ <div class="battlehead"><div class="playerbox"><div class="pn" id="enemyName">คู่ต่อสู้</div><div class="lp opp" id="enemyLP">4000</div><div class="mini" id="enemyCount"></div></div><div class="versus">VS <div class="vsmall">ONLINE DUEL</div></div><div class="playerbox you"><div class="pn" id="myName">คุณ</div><div class="lp" id="myLP">4000</div><div class="mini" id="myCount"></div></div></div>
+ <div class="turnbar"><div><div class="phase" id="turnLabel">กำลังเริ่มเกม...</div><div class="mini" id="phaseLabel"></div><div id="turnClock" class="turn-clock" aria-live="off">⏳ 01:30</div></div><div class="buttons"><button class="secondary small" id="battleButton">⚔️ เข้าโจมตี</button><button class="primary small" id="endButton">จบเทิร์น ➜</button></div></div>
+ <div class="deck-area"><button type="button" id="drawPile" class="draw-pile" aria-label="กดจั่วการ์ดหนึ่งใบ"><span class="pile-symbol">✦</span><strong>กองจั่วของคุณ</strong><span id="pileCount">52 ใบ</span><small id="drawHint">รอเทิร์นของคุณ</small></button><div class="deck-tip">🃏 เมื่อเริ่มเทิร์นใหม่ กดกองการ์ดเพื่อจั่ว 1 ใบ ก่อนเล่นหรือจบเทิร์น</div></div><div id="attackFx" class="attack-fx" aria-hidden="true">⚔️</div>
+ <div id="endBanner" class="winner hidden" role="status"></div><div id="resultOverlay" class="result-overlay hidden" role="dialog" aria-modal="true" aria-label="ผลการแข่งขัน"><div class="result-box"><div id="resultTitle" class="result-title">WIN</div><p id="resultDetail"></p><button id="resultClose" class="primary">ดูสนามหลังจบเกม</button><button id="resultRestart" class="secondary">กลับหน้าเลือกเด็ค</button></div></div><div id="reconnectNotice" class="reconnect-notice hidden" role="status"><strong>⚠️ การเชื่อมต่อขาดหาย</strong><div id="reconnectText">กำลังพยายามกลับเข้าห้องเดิม...</div><button id="retryConnect" class="secondary">🔄 เชื่อมต่อใหม่</button></div>
+ <div class="zone-head"><span>❄️ ⚔️ สนามฝ่ายตรงข้าม</span><button type="button" class="grave-button" id="enemyGrave">สุสาน 0</button></div><div class="field" id="enemyField"></div>
+ <div class="zone-head"><span>🃏 กับดักฝ่ายตรงข้าม</span><div class="traprow" id="enemyTraps"></div></div>
+ <hr style="border:0;border-top:1px solid #4e5071;margin:18px 0">
+ <div class="zone-head"><span>🔥 🛡️ สนามของเรา</span><button type="button" class="grave-button" id="myGrave">สุสาน 0</button></div><div class="field" id="myField"></div>
+ <div class="zone-head"><span>🃏 กับดักที่เราวางไว้</span><div class="traprow" id="myTraps"></div></div>
+ <div class="zone-head"><span>✋ ไพ่ในมือของเรา</span><span id="handCounter"></span></div><div class="hand" id="hand"></div>
+ <div id="selected" class="actpanel hidden"></div>
+ <div id="actionMsg" class="msg" aria-live="polite"></div>
+ <div class="panel" style="padding:13px"><strong style="color:#f1d18b">📜 บันทึกการดวล</strong><ol id="logs" class="loglist"></ol></div>
+ <p class="muted" style="text-align:center">กดการ์ดบนมือเพื่ออัญเชิญ/ใช้เวท/วางกับดัก • กดมอนสเตอร์ของเราเพื่อโจมตี • การสังเวยและเป้าหมายเอฟเฟกต์อัตโนมัติเลือกตามกติกาทดลอง</p>
+</section>
+<div id="graveModal" class="grave-modal hidden" role="dialog" aria-modal="true" aria-label="สุสาน"><div class="grave-content"><div class="grave-header"><strong id="graveTitle">สุสาน</strong><button id="graveClose" class="secondary">ปิด ✕</button></div><div id="graveCards" class="grave-cards"></div></div></div>
+<div class="footer">My Card V2.2 · 7 Decks · Online PvP<br><span class="pond-credit">Created by Pond · สร้างโดยปอนด์</span></div>
+</main>
+<script>
+document.addEventListener('DOMContentLoaded',()=>{
+ const modal=document.getElementById('graveModal');
+ const close=()=>modal.classList.add('hidden');
+ document.getElementById('graveClose').addEventListener('click',close);
+ modal.addEventListener('click',e=>{if(e.target===modal)close()});
+ for(const [id,who] of [['myGrave','mine'],['enemyGrave','enemy']]){
+  document.getElementById(id).addEventListener('click',()=>{
+   const g=window.__mycardVisibleState;if(!g)return;
+   const p=g.players[who==='mine'?g.you:1-g.you];
+   const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+   document.getElementById('graveTitle').textContent='🪦 สุสาน '+p.name+' ('+p.grave.length+' ใบ)';
+   document.getElementById('graveCards').innerHTML=p.grave.length?p.grave.map(c=>{const d=window.DUEL_DECKS&&Object.values(window.DUEL_DECKS).flatMap(x=>x.cards).find(x=>x.id===c.id);return '<div class="grave-item"><strong>'+esc(d?.name||c.id)+'</strong><br>'+esc(d?.type||'')+(d?.atk!=null?'<br>ATK '+d.atk+' / DEF '+d.def:'')+'</div>'}).join(''):'<p>ยังไม่มีการ์ดในสุสาน</p>';
+   modal.classList.remove('hidden');
+  });
+ }
+});
+</script>
+<script src="./decks.js"></script><script src="./engine.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/peerjs@1.5.5/dist/peerjs.min.js"></script><script src="./deckbuilder.js"></script><script src="./app.js"></script>
+<button id="v21Sound" class="v21-sound" type="button" aria-pressed="false">🔇 เสียง: ปิด</button><div id="v21Boss" class="v21-boss hidden" aria-live="polite"></div><script src="./v21.js"></script><script src="./v22fx.js"></script><script src="./v22audio.js"></script><script src="./chat.js"></script><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script><script src="./profile.js"></script><script src="./opponent-profile.js"></script></body></html>

@@ -1,0 +1,18 @@
+MY CARD V2.6 — Supabase Profile Integration
+
+เชื่อม Project URL และ Publishable key ใน profile.js แล้ว
+- สมัครสมาชิก/ล็อกอินอีเมล
+- เปลี่ยนชื่อโปรไฟล์ถาวรใน public.profiles
+- อัปโหลดรูป avatar ไป Storage bucket avatars (public)
+- โหลดโปรไฟล์เมื่อเข้าใช้งานบนอุปกรณ์อื่น
+- เกมดวลออนไลน์ยังใช้ PeerJS แบบเดิม ไม่ใช่ Supabase Realtime
+- เด็คที่จัดเองยังเก็บใน localStorage ของเครื่องเดิม ไม่ได้ซิงก์ข้ามเครื่อง
+
+สำคัญ: Storage policies ต้องจำกัด path ตาม auth.uid() ไม่ใช่แค่ bucket_id
+สำหรับ policy INSERT, UPDATE, SELECT, DELETE ควรใช้เงื่อนไข:
+bucket_id = 'avatars' AND (storage.foldername(name))[1] = (select auth.uid())::text
+หากสร้าง policy เดิมไว้ด้วยเงื่อนไข bucket_id = 'avatars' อย่างเดียว
+ให้แก้ไข/ลบ policy เดิมที่กว้างเกินไป เพราะ policies เป็นแบบ OR
+
+การทดสอบ: เปิดบน Netlify หรือ localhost (ไม่ใช่ file://)
+ตรวจสอบการยืนยันอีเมลใน Supabase Auth settings หากสมัครแล้วล็อกอินไม่ได้
