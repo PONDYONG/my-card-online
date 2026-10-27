@@ -1,0 +1,52 @@
+name: Extract Card Images
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract images
+        run: |
+          python3 - <<'PY'
+          import zipfile
+          from pathlib import Path
+
+          archive = Path("card-images.zip")
+          destination = Path("art")
+          destination.mkdir(exist_ok=True)
+
+          if not archive.exists():
+              raise SystemExit("Missing card-images.zip")
+
+          count = 0
+          with zipfile.ZipFile(archive) as z:
+              for item in z.infolist():
+                  if item.is_dir():
+                      continue
+                  filename = Path(item.filename).name
+                  if not filename.lower().endswith((".webp", ".png", ".jpg", ".jpeg")):
+                      continue
+                  with z.open(item) as source:
+                      (destination / filename).write_bytes(source.read())
+                  count += 1
+
+          print(f"Extracted {count} images")
+          PY
+
+      - name: Commit images
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add art/
+          git diff --cached --quiet || (
+            git commit -m "Extract card images" &&
+            git push
+          )
